@@ -19,10 +19,10 @@ promise_test(async () => {
   assert_equals(watcher.score, 0);
 
   // This should report a layout shift as target is now visible.
-  target.style.top = '100100px';
+  target.style.top = '100050px';
 
   await watcher.promise;
-  const expectedScore = computeExpectedScore(100 * 100, 100);
+  const expectedScore = computeExpectedScore(100 * 100, 50);
   assert_equals(watcher.score, expectedScore);
 
   // No new layout shift should be reported when target is scrolled out of screeen.
